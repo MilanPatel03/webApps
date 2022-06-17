@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(16, 162, 224);  
+}
+
+.wrapper {
+    background: rgb(216, 233, 239);
+    /*rgb(216, 233, 239)
+    rgb(204, 232, 255)*/
+    border-radius: 7px;
+    display: grid;
+    max-width: 475px;
+    width: 100%;
+    padding: 2rem 2.5rem;
+}
+
+.input-box {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.tweet-area {
+    min-height: 130px;
+    position: relative;
+    max-height: 170px;
+    overflow-y: auto;
+}
+
+.tweet-area::-webkit-scrollbar{
+    width: 0px;
+}
+
+.tweet-area .placeholder{
+    position: absolute;
+    margin-top: -3px;
+    pointer-events: none;
+    color: rgba(195, 195, 195, 0.909);
+    font-size: 22px;
+}
+ 
+.tweet-area .input {
+    outline: none;
+    word-wrap: break-word;
+    font-size: 17px;
+    word-break: break-all;
+}
+
+.tweet-area .readonly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;
+    color: transparent;
+}
+
+.tweet-area .editable{
+    position: relative;
+    z-index: 5;
+}
+
+.readonly .highlight{
+    background: rgba(255, 30, 0, 0.505);
+}
+
+.input-box .privacy {
+    display: inline-flex;
+    color: rgb(16, 162, 224);
+    margin: 15px 0px;
+    align-items: center;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition:  background 0.2s ease;
+}
+
+.input-box .privacy:hover, .icons li:hover {
+    background: whitesmoke;
+    outline: 0.1px solid white;
+}
+
+.privacy .i {
+    font-size: 18px;
+}
+
+.privacy span{
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 7px;
+}
+
+.bottom {
+    display: flex;
+    margin-top: 13px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom .icons{
+    display: inline-flex;
+}
+
+.icons li{
+    list-style: none;
+    color: rgb(16, 162, 224);
+    height: 33px; width:  33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3.5px;
+    font-size: 21px;
+    cursor: pointer;
+    border-radius: 15%;
+    transition:  background 0.2s ease;
+}
+
+.bottom .content{
+    display: flex;
+    align-items: center;
+}
+
+.content .counter{
+    display: none;
+     margin-right: 15px; padding-right: 15px;
+     color: #333;
+     border-right: 1px solid black;
+}
+
+.content button{
+    padding: 9px 18px;
+    border: none;
+    outline:1px solid white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    background: white;
+    color: rgb(16, 162, 224);
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+
+}
+
+.content button:hover {
+    background: rgb(16, 162, 224);
+    
+    color: white;
+}
+
+.content button.active{
+    opacity: 1;
+    pointer-events: auto;
+}
